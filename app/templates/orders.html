@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}My orders{% endblock %}
+{% block main %}
+<section class="page-head">
+  <p class="eyebrow">Account · {{ g.user.username }}</p>
+  <h1>My orders</h1>
+  <p class="lede">{{ orders|length }} order{{ '' if orders|length == 1 else 's' }}, AED {{ total }} in total. Stored in the <span class="mono">orders</span> table and linked to your account.</p>
+</section>
+{% if orders %}
+<div class="table-wrap"><table class="otable">
+  <thead><tr><th>#</th><th>Print</th><th>Colour</th><th>Qty</th><th>Total</th><th>Note</th><th>Placed</th><th>Served by</th><th></th></tr></thead>
+  <tbody>{% for o in orders %}<tr>
+    <td class="mono">{{ o.id }}</td>
+    <td><a href="{{ url_for('item', slug=o.slug) }}">{{ o.name }}</a></td>
+    <td><span class="sw" style="--c:{{ COLORS[o.color] }}"></span> {{ o.color }}</td>
+    <td>{{ o.qty }}</td><td>AED {{ o.total_aed }}</td><td>{{ o.note }}</td>
+    <td class="mono">{{ o.created_at.strftime('%d %b %H:%M') }} UTC</td>
+    <td class="mono">{{ o.served_by }}</td>
+    <td><form method="post" action="{{ url_for('cancel', oid=o.id) }}"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="btn btn-ghost btn-small">Cancel</button></form></td>
+  </tr>{% endfor %}</tbody>
+</table></div>
+{% else %}
+<p class="note">No orders yet. <a href="{{ url_for('shop') }}">Pick something from the shop.</a></p>
+{% endif %}
+{% endblock %}

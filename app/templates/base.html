@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Blitz Prints{% endblock %} · Blitz Prints Live</title>
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='live.css') }}">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="{{ url_for('home') }}" aria-label="Blitz Prints home">
+    <span class="brand-strands" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="brand-word">Blitz Prints <small class="live-tag">live</small></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="{{ url_for('shop') }}">Shop</a>
+    <a href="{{ url_for('orders') }}">My orders</a>
+  </nav>
+  {% if g.user %}
+  <form class="who" method="post" action="{{ url_for('logout') }}">
+    <span class="who-name">Signed in as <b>{{ g.user.username }}</b></span>
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <button class="btn btn-ghost btn-small">Log out</button>
+  </form>
+  {% else %}
+  <div class="who"><a class="btn btn-ghost btn-small" href="{{ url_for('login') }}">Log in</a><a class="btn btn-primary btn-small" href="{{ url_for('register') }}">Create account</a></div>
+  {% endif %}
+</header>
+<main id="main">
+{% with msgs = get_flashed_messages() %}{% if msgs %}<div class="flash" role="status">{% for m in msgs %}<p>{{ m }}</p>{% endfor %}</div>{% endif %}{% endwith %}
+{% block main %}{% endblock %}
+</main>
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div><p class="foot-brand">Blitz Prints Live</p><p>The Lab 5 print shop, now with accounts and orders stored in PostgreSQL.</p></div>
+    <div><p class="foot-h">Browse</p><a href="{{ url_for('shop') }}">All prints</a><a href="{{ url_for('orders') }}">My orders</a></div>
+    <div><p class="foot-h">The fine print</p><p>CCEN 448 class project. Nothing is for sale and no payment is taken.</p></div>
+  </div>
+  <p class="served mono">Served by {{ HOST }} · Flask + PostgreSQL</p>
+</footer>
+</body>
+</html>

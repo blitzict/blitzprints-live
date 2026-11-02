@@ -1,0 +1,13 @@
+{% macro card(p) %}
+<article class="card">
+  <a class="card-link" href="{{ url_for('item', slug=p.slug) }}">
+    <div class="card-img"><img src="{{ url_for('static', filename='img/products/' ~ p.slug ~ '-480.webp') }}" alt="{{ p.name }}" width="480" height="480" loading="lazy"></div>
+    <div class="card-body">
+      <div class="card-top">{% if p.status == 'ready' %}<span class="tag tag-ready">On the shelf</span>{% else %}<span class="tag">Made to order</span>{% endif %}<span class="swatches">{% for c in p.colors %}<span class="sw" style="--c:{{ COLORS[c] }}" title="{{ c }}"></span>{% endfor %}</span></div>
+      <h3>{{ p.name }}</h3>
+      <p class="card-blurb">{{ p.blurb }}</p>
+      <div class="card-foot"><span class="price">AED {{ p.price_aed }}</span><span class="mono">{{ p.print_min|ptime }} · {{ p.grams|round|int }} g</span></div>
+    </div>
+  </a>
+</article>
+{% endmacro %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% from "_card.html" import card with context %}
+{% block title %}Shop{% endblock %}
+{% block main %}
+<section class="page-head">
+  <p class="eyebrow">The shop</p>
+  <h1>Everything on the shelf</h1>
+  <p class="lede">{{ products|length }} prints, loaded from the <span class="mono">products</span> table.</p>
+</section>
+<form class="shopbar" method="get">
+  <input type="search" name="q" value="{{ q }}" placeholder="Search prints">
+  <div class="chips">
+    <a class="chip-link {{ 'on' if not cat }}" href="{{ url_for('shop') }}">All</a>
+    {% for k, v in CATS.items() %}<a class="chip-link {{ 'on' if cat == k }}" href="{{ url_for('shop', cat=k) }}">{{ v }}</a>{% endfor %}
+  </div>
+</form>
+<section class="section"><div class="grid">{% for p in products %}{{ card(p) }}{% else %}<p>No prints match.</p>{% endfor %}</div></section>
+{% endblock %}

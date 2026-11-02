@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% from "_card.html" import card with context %}
+{% block title %}Home{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Figurines and desk objects · printed in Abu Dhabi</p>
+    <h1>Small things, printed one layer at a time.</h1>
+    <p class="lede">Create an account, pick a print and a colour, and your order is saved to the shop's database. Come back any time to see or cancel it.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ url_for('shop') }}">Browse the shop</a>
+      {% if not g.user %}<a class="btn btn-ghost" href="{{ url_for('register') }}">Create an account</a>{% endif %}
+    </div>
+  </div>
+  <figure class="hero-plate"><div class="plate"><img src="{{ url_for('static', filename='img/products/blitz-benchy-900.webp') }}" alt="Blitz Benchy tugboat in cyan, magenta, yellow and white" width="900" height="900"></div></figure>
+</section>
+<section class="band">
+  <div class="stat"><span class="stat-n">{{ stats.products }}</span><span class="stat-l">prints in the catalogue table</span></div>
+  <div class="stat"><span class="stat-n">{{ stats.users }}</span><span class="stat-l">registered accounts</span></div>
+  <div class="stat"><span class="stat-n">{{ stats.orders }}</span><span class="stat-l">orders in the database</span></div>
+</section>
+<section class="section">
+  <div class="section-head"><h2>Featured prints</h2><a class="more" href="{{ url_for('shop') }}">See all →</a></div>
+  <div class="grid">{% for p in featured %}{{ card(p) }}{% endfor %}</div>
+</section>
+{% endblock %}

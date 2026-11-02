@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ p.name }}{% endblock %}
+{% block main %}
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ url_for('shop') }}">Shop</a><span>/</span><a href="{{ url_for('shop', cat=p.category) }}">{{ CATS[p.category] }}</a><span>/</span><span aria-current="page">{{ p.name }}</span></nav>
+<section class="item">
+  <figure class="item-img"><div class="plate"><img src="{{ url_for('static', filename='img/products/' ~ p.slug ~ '-900.webp') }}" alt="{{ p.name }}" width="900" height="900"></div></figure>
+  <div class="item-info">
+    <p class="eyebrow">{{ CATS[p.category] }}</p>
+    <h1>{{ p.name }}</h1>
+    <p class="lede">{{ p.blurb }}</p>
+    <p class="item-price">AED {{ p.price_aed }}</p>
+    <p class="status {{ 'status-ready' if p.status == 'ready' }}">{{ 'On the shelf, ready to send' if p.status == 'ready' else 'Made to order' }}</p>
+    {% if g.user %}
+    <form class="order-form" method="post">
+      <input type="hidden" name="csrf" value="{{ csrf }}">
+      <label>Colour
+        <select name="color">{% for c in p.colors %}<option value="{{ c }}">{{ c|capitalize }} PLA</option>{% endfor %}</select></label>
+      <label>Qty <input type="number" name="qty" min="1" max="9" value="1"></label>
+      <label class="wide">Note for the printer <input type="text" name="note" maxlength="200" placeholder="Optional, e.g. gift wrap"></label>
+      <button class="btn btn-primary">Place order</button>
+    </form>
+    {% else %}
+    <p class="note"><a href="{{ url_for('login', next=request.path) }}">Log in</a> or <a href="{{ url_for('register') }}">create an account</a> to order this print.</p>
+    {% endif %}
+    <h2 class="h-small">From the slicer</h2>
+    <dl class="ticket ticket-wide"><div><dt>time</dt><dd>{{ p.print_min|ptime }}</dd></div><div><dt>filament</dt><dd>{{ p.grams|round|int }} g PLA</dd></div><div><dt>height</dt><dd>{{ p.height_mm }} mm</dd></div></dl>
+  </div>
+</section>
+{% endblock %}

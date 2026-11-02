@@ -1,0 +1,251 @@
+[
+ {
+  "slug": "blitz-benchy",
+  "name": "Blitz Benchy",
+  "cat": "figurines",
+  "price": 35,
+  "colors": [
+   "cyan",
+   "magenta",
+   "yellow",
+   "white"
+  ],
+  "status": "ready",
+  "height": 48,
+  "print_min": 56,
+  "grams": 11.7,
+  "featured": 1,
+  "blurb": "The classic torture-test tug, printed in four colours in one go."
+ },
+ {
+  "slug": "cowboy-duck",
+  "name": "Cowboy Duck",
+  "cat": "figurines",
+  "price": 45,
+  "colors": [
+   "yellow",
+   "green",
+   "black"
+  ],
+  "status": "ready",
+  "height": 40,
+  "print_min": 88,
+  "grams": 9.6,
+  "featured": 2,
+  "blurb": "A rubber duck with a black hat, shades, and opinions."
+ },
+ {
+  "slug": "majestic-cat",
+  "name": "Majestic Cat",
+  "cat": "figurines",
+  "price": 40,
+  "colors": [
+   "white"
+  ],
+  "status": "ready",
+  "height": 86,
+  "print_min": 110,
+  "grams": 21,
+  "featured": null,
+  "blurb": "Sits very upright and looks down on everyone. Printed at 130 %."
+ },
+ {
+  "slug": "sitting-kitten",
+  "name": "Sitting Kitten",
+  "cat": "figurines",
+  "price": 30,
+  "colors": [
+   "white"
+  ],
+  "status": "ready",
+  "height": 62,
+  "print_min": 83,
+  "grams": 15.9,
+  "featured": null,
+  "blurb": "The Majestic Cat's smaller, less impressed sibling."
+ },
+ {
+  "slug": "rocky",
+  "name": "Rocky the Engineer",
+  "cat": "figurines",
+  "price": 55,
+  "colors": [
+   "grey"
+  ],
+  "status": "ready",
+  "height": 70,
+  "print_min": 336,
+  "grams": 25.1,
+  "featured": 3,
+  "blurb": "Five legs, a carapace, and no face. Fist my bump. Printed at 140 %."
+ },
+ {
+  "slug": "peace-sprite",
+  "name": "Peace Sprite",
+  "cat": "figurines",
+  "price": 28,
+  "colors": [
+   "cyan"
+  ],
+  "status": "ready",
+  "height": 55,
+  "print_min": 70,
+  "grams": 12,
+  "featured": null,
+  "blurb": "A small round-headed friend throwing a peace sign."
+ },
+ {
+  "slug": "dollar-duck",
+  "name": "Dollar Duck (prototype)",
+  "cat": "figurines",
+  "price": 25,
+  "colors": [
+   "yellow"
+  ],
+  "status": "made-to-order",
+  "height": 45,
+  "print_min": 60,
+  "grams": 10.5,
+  "featured": null,
+  "blurb": "The first duck. Its eyes were dollar signs. We moved on."
+ },
+ {
+  "slug": "classic-rose",
+  "name": "Classic Rose",
+  "cat": "botanicals",
+  "price": 38,
+  "colors": [
+   "red",
+   "green"
+  ],
+  "status": "ready",
+  "height": 210,
+  "print_min": 165,
+  "grams": 34,
+  "featured": null,
+  "blurb": "A long-stem red rose that screws together and never needs water."
+ },
+ {
+  "slug": "rosebud",
+  "name": "Rosebud with Leaves",
+  "cat": "botanicals",
+  "price": 42,
+  "colors": [
+   "red",
+   "green"
+  ],
+  "status": "ready",
+  "height": 230,
+  "print_min": 161,
+  "grams": 36.1,
+  "featured": null,
+  "blurb": "A tighter bud on a leafy stem. Buy three and it's a bouquet."
+ },
+ {
+  "slug": "blitz-cabinet",
+  "name": "BlitzCabinet",
+  "cat": "workshop",
+  "price": 590,
+  "colors": [
+   "white",
+   "orange"
+  ],
+  "status": "made-to-order",
+  "height": 313,
+  "print_min": 4680,
+  "grams": 2204,
+  "featured": 4,
+  "blurb": "A five-spool filament wardrobe with sliding doors. No screws, no metal, all PLA."
+ },
+ {
+  "slug": "twist-vase",
+  "name": "Twist Vase",
+  "cat": "originals",
+  "price": 48,
+  "colors": [
+   "teal"
+  ],
+  "status": "made-to-order",
+  "height": 130,
+  "print_min": 140,
+  "grams": 58,
+  "featured": null,
+  "blurb": "A nine-sided vase that turns 140° on its way up."
+ },
+ {
+  "slug": "ringed-planet",
+  "name": "Ringed Planet",
+  "cat": "originals",
+  "price": 44,
+  "colors": [
+   "orange"
+  ],
+  "status": "made-to-order",
+  "height": 100,
+  "print_min": 180,
+  "grams": 62,
+  "featured": null,
+  "blurb": "A gas giant on a stick, with its ring tilted 68°."
+ },
+ {
+  "slug": "crystal-cluster",
+  "name": "Crystal Cluster",
+  "cat": "originals",
+  "price": 36,
+  "colors": [
+   "lilac"
+  ],
+  "status": "made-to-order",
+  "height": 120,
+  "print_min": 150,
+  "grams": 44,
+  "featured": null,
+  "blurb": "Nine hexagonal crystals growing out of one rock."
+ },
+ {
+  "slug": "cairn-stack",
+  "name": "Cairn Stack",
+  "cat": "originals",
+  "price": 32,
+  "colors": [
+   "sand"
+  ],
+  "status": "made-to-order",
+  "height": 70,
+  "print_min": 95,
+  "grams": 40,
+  "featured": null,
+  "blurb": "Five balanced stones that will never fall over."
+ },
+ {
+  "slug": "geo-lantern",
+  "name": "Geo Lantern",
+  "cat": "originals",
+  "price": 52,
+  "colors": [
+   "white"
+  ],
+  "status": "made-to-order",
+  "height": 110,
+  "print_min": 210,
+  "grams": 48,
+  "featured": null,
+  "blurb": "A geodesic shell for a tea light, or for an LED one if you're sensible."
+ },
+ {
+  "slug": "spool-octopus",
+  "name": "Spool Octopus",
+  "cat": "originals",
+  "price": 34,
+  "colors": [
+   "magenta",
+   "black"
+  ],
+  "status": "made-to-order",
+  "height": 75,
+  "print_min": 120,
+  "grams": 30,
+  "featured": null,
+  "blurb": "Eight curling arms, two black eyes, no bones."
+ }
+]
